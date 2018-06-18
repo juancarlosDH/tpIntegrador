@@ -10,20 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/hola/{nombre}', 'HomeController@saludarUsuario');
 
-Route::get('/serie/{id}', function($id){
-  //validar que sea un numero
-
-
-  //buscar en la BD
-
-
-  //mostrar el html
-});
-
-Route::get('/hola', function(){
-  return view('saludos.saludar');
-});
+Route::get('/hola', 'HomeController@index');
 
 Route::get('/', function () {
     return view('welcome');

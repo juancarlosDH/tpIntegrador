@@ -10,6 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/peliculas/agregar', 'PeliculasController@agregar');
+Route::get('/peliculas/listar', 'PeliculasController@listar');
+
+
+
 Route::get('/login', 'MiControlador@login');
 
 Route::get('/registro', 'MiControlador@registro');

@@ -18,34 +18,4 @@ class MiControlador extends Controller
     return view('login');
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function listarCosas(){
-
-      $cosas = [ 'celular', 'silla', 'laptop' ];
-
-      return view('listadoCosas')->with('pepe', $cosas)->with('usuario', 'JC');
-
-    }
 }

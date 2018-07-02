@@ -7,3 +7,9 @@
 h1{
   font-size: 20px;
 }
+
+.miniatura {
+    display: inline-block;
+    width: 60px;
+    box-sizing: border-box;
+}

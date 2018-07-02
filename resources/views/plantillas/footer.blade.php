@@ -1,5 +1,5 @@
-<div class="footer">
-  <ul>
-    <li>Contacto</li>
-  </ul>
-</div>
+<footer class="footer">
+  <div class="container">
+    <p class="text-muted">Mi Pie de Pagina</p>
+  </div>
+</footer>

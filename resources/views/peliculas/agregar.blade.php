@@ -2,30 +2,30 @@
 
 @section('contenido')
 
-  <form class="" action="" method="post">
-    <div class="">
-      <label for="">Titulo</label>
-      <input type="text" name="title" value="">
-    </div>
+  <form action="/movies/add" method="POST" enctype="multipart/form-data">
+    {{ csrf_field() }}
 
-    <div class="">
-      <label for="">Premios</label>
-      <input type="text" name="awards" value="">
-    </div>
+    <label for="title">Título</label>
+    <input name="title" value="" class="form-control" type="text" placeholder="Ingrese el título">
 
-    <div class="">
-      <label for="">Rating</label>
-      <input type="text" name="rating" value="">
-    </div>
+    <label for="awards">Premios</label>
+    <input name="awards" value="" class="form-control" type="number" step="1" min="0" placeholder="Premios ">
 
-    <div class="">
-      <label for="">Fecha de Lanzamiento</label>
-      <input type="text" name="release_date" value="">
-    </div>
+    <label for="rating">Rating</label>
+    <input name="rating" value="" class="form-control" type="number" step="0.1" placeholder="Rating (1 al 10)">
 
-    <div class="">
-    <button type="submit" name="button">Guardar</button>
-    </div>
-  </form>
+    <label for="release_date">Fecha de Lanzamiento</label>
+    <input name="release_date" value="" class="form-control" type="date" placeholder="Fecha de lanzamiento">
+
+    <label for="genre_id">Genero</label>
+    <select id="genre_id" name="genre_id" class="form-control">
+        <option value="">Seleccione</option>
+    </select>
+
+    {{-- <label for="poster">Poster</label>
+    <input name="poster" type="file" class="form-control"> --}}
+
+    <button type="submit" class="btn btn-primary">Crear pelicula</button>
+</form>
 
 @endsection

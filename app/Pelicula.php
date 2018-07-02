@@ -9,4 +9,6 @@ class Pelicula extends Model
 
     protected $table = 'movies';
 
+    protected $guarded = [];
+
 }

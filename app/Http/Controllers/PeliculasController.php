@@ -46,10 +46,22 @@ class PeliculasController extends Controller
 
     $this->validate( $request, $reglas,  $mensajes);
 
-
+    //podemos tener un atajo para obetener un array asociativo de clave con nombre de input y valor del mismo
     $pelicula = Pelicula::create(
       $request->except(['_token'])
     );
+    //o hacerlos uno a uno
+    /*
+    Pelicula::create(
+      [ 'title' => $request->input('title'),
+       'awards' => $request->input('awards'),
+       ...
+      ]
+    );
+    */
+
+
+
 
     echo 'Se guardó la pelicula';
 

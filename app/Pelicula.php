@@ -11,4 +11,12 @@ class Pelicula extends Model
 
     protected $guarded = [];
 
+    public function genre(){
+
+      return $this->belongsTo( Genre::class, 'genero_id',  'id_genero' );
+
+    }
+
+
+
 }

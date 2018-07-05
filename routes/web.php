@@ -11,9 +11,15 @@
 |
 */
 
+Route::get('/generos', 'GenresController@listar');
+
 Route::get('/peliculas/agregar', 'PeliculasController@agregar');
+Route::post('/peliculas/agregar', 'PeliculasController@guardar');
+
 Route::get('/peliculas/listar', 'PeliculasController@listar');
 
+Route::get('/peliculas/{id}', 'PeliculasController@editar');
+Route::post('/peliculas/{id}', 'PeliculasController@actualizar');
 
 
 Route::get('/login', 'MiControlador@login');

@@ -26,12 +26,14 @@
 
   @foreach ($listado as $peli)
     <div class="col-sm-12">
-  		<img src="/posters/default.jpg" class="thumbnail miniatura" >
+  		<img src="{{ \Storage::url($peli->ruta_imagen) }}" class="thumbnail miniatura" >
         <a href="/peliculas/{{ $peli->id }}">{{ $peli->title }}
           ({{ $peli->genre->name }})</a>
       </div>
   @endforeach
 
   </div>
+
+{{ $listado->links() }}
 
 @endsection

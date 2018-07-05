@@ -12,7 +12,11 @@ class PeliculasController extends Controller
 
   public function listar(){
 
-    $peliculas = Pelicula::all();
+    $peliculas = Pelicula::paginate(3);
+
+    /*$peliculas->filter( function($peli){
+      return $peli->rating >= 5 ;
+    });*/
 
     return view('peliculas.listar')
       ->with('listado', $peliculas);
@@ -37,7 +41,8 @@ class PeliculasController extends Controller
       'awards' => 'required',
       'rating' => 'required',
       'release_date' => 'required',
-      'genre_id' => 'required'
+      'genre_id' => 'required',
+      'poster' => 'image'
     ];
 
     $mensajes = [
@@ -46,10 +51,23 @@ class PeliculasController extends Controller
 
     $this->validate( $request, $reglas,  $mensajes);
 
+    $ruta_imagen='';
+    //$archivo = $request->file('poster')->storePublicly('public/posters');
+    if($request->file('poster')){
+      $ruta_imagen = $request->file('poster')->storePublicly('public/posters');
+    }
+
     //podemos tener un atajo para obetener un array asociativo de clave con nombre de input y valor del mismo
     $pelicula = Pelicula::create(
-      $request->except(['_token'])
+      [ 'title' => $request->input('title'),
+       'awards' => $request->input('awards'),
+       'rating' => $request->input('rating'),
+       'release_date' => $request->input('release_date'),
+       'genre_id' => $request->input('genre_id'),
+       'ruta_imagen' => $ruta_imagen
+      ]
     );
+
     //o hacerlos uno a uno
     /*
     Pelicula::create(
@@ -82,6 +100,14 @@ class PeliculasController extends Controller
   }
 
   public function actualizar($id, Request $request){
+
+    $this->validate($request, [
+      'title' => 'required|unique:movies,title,'.$id,
+      'awards' => 'required',
+      'rating' => 'required',
+      'release_date' => 'required'
+    ]);
+
     //me traigo la pelicula
     $pelicula = Pelicula::find($id);
 

@@ -13,7 +13,6 @@
 
 Route::get('/generos', 'GenresController@listar');
 
-
 Route::get('/peliculas/agregar', 'PeliculasController@agregar');
 Route::post('/peliculas/agregar', 'PeliculasController@guardar');
 

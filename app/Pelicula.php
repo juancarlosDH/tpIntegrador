@@ -13,7 +13,14 @@ class Pelicula extends Model
 
     public function genre(){
 
-      return $this->belongsTo( Genre::class, 'genero_id',  'id_genero' );
+      return $this->belongsTo( Genre::class );
+
+    }
+
+    public function actors(){
+
+      return $this->belongsToMany( Actor::class
+      , 'actor_movie', 'movie_id', 'actor_id' );
 
     }
 

@@ -54,7 +54,7 @@ class PeliculasController extends Controller
     $ruta_imagen='';
     //$archivo = $request->file('poster')->storePublicly('public/posters');
     if($request->file('poster')){
-      $ruta_imagen = $request->file('poster')->storePublicly('public/posters');
+      $ruta_imagen = $request->file('poster')->store('posters', 'public');
     }
 
     //podemos tener un atajo para obetener un array asociativo de clave con nombre de input y valor del mismo
@@ -77,13 +77,10 @@ class PeliculasController extends Controller
       ]
     );
     */
-
-
-
-
-    echo 'Se guardó la pelicula';
-
-    dd($pelicula);
+    //aqui redirijo al listar de las peliculas
+    return redirect('/peliculas/listar')
+    //y quiero mostrar un mensaje que diga que fue agregada la pelicula exitosamente
+      ->with('mensaje', 'Pelicula creada exitosamente');
 
   }
 

@@ -37,7 +37,7 @@
     <select id="genre_id" name="genre_id" class="form-control">
       <option value="">Seleccione</option>
       @foreach ($generos as $genero)
-        <option value="{{$genero->id}}">{{$genero->name}}</option>
+        <option value="{{$genero->id}}" {{ (old('genre_id')==$genero->id) ?'selected':'' }}>{{$genero->name}}</option>
       @endforeach
     </select>
     @if($errors->has('genre_id'))

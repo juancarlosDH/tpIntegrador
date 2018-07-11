@@ -17,6 +17,12 @@
 
     </div>
   </h2>
+{{--  este es un mensaje enviado por el redirect, por eso uso es session --}}
+  @if (session('mensaje'))
+   <div class="alert alert-info" role="alert">
+     {{ session('mensaje') }}
+   </div>
+  @endif
 
   <a href="/peliculas/agregar" class="btn btn-primary">Nueva Peli</a>
 
@@ -26,14 +32,14 @@
 
   @foreach ($listado as $peli)
     <div class="col-sm-12">
-  		<img src="{{ \Storage::url($peli->ruta_imagen) }}" class="thumbnail miniatura" >
+  		<img src="{{ \Storage::disk('public')->url($peli->ruta_imagen) }}" class="thumbnail miniatura" >
         <a href="/peliculas/{{ $peli->id }}">{{ $peli->title }}
           ({{ $peli->genre->name }})</a>
       </div>
   @endforeach
 
   </div>
-  
+
 
 {{ $listado->links() }}
 

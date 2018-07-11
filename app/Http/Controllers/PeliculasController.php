@@ -12,6 +12,7 @@ class PeliculasController extends Controller
 
   public function listar(){
 
+    // $peliculas = Pelicula::all();
     $peliculas = Pelicula::paginate(3);
 
     /*$peliculas->filter( function($peli){
@@ -54,7 +55,7 @@ class PeliculasController extends Controller
     $ruta_imagen='';
     //$archivo = $request->file('poster')->storePublicly('public/posters');
     if($request->file('poster')){
-      $ruta_imagen = $request->file('poster')->storePublicly('public/posters');
+      $ruta_imagen = $request->file('poster')->store('posters', 'public');
     }
 
     //podemos tener un atajo para obetener un array asociativo de clave con nombre de input y valor del mismo

@@ -52,6 +52,7 @@ class AdicionarDirectorAPelicula extends Migration
     {
 
       Schema::table('movies', function( Blueprint $table ){
+        $table->dropForeign('movies_director_id_foreign');
         $table->dropColumn('director_id');
       });
 

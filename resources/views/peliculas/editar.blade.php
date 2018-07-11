@@ -57,6 +57,8 @@
 
   <div class="col-sm-6">
 
+    <img width="50%" src="{{ \Storage::url( $pelicula->ruta_imagen ) }}" alt="">
+
     <h3>Actores</h3>
     <ul>
     @foreach ($pelicula->actors as $actor)

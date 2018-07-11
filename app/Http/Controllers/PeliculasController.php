@@ -12,6 +12,7 @@ class PeliculasController extends Controller
 
   public function listar(){
 
+    // $peliculas = Pelicula::all();
     $peliculas = Pelicula::paginate(3);
 
     /*$peliculas->filter( function($peli){

@@ -27,3 +27,7 @@ Route::get('/login', 'MiControlador@login');
 Route::get('/registro', 'MiControlador@registro');
 
 Route::get('/', 'MiControlador@principal');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -20,5 +20,8 @@
         </div>
     </div>
 </div>
+<<<<<<< HEAD
 <script src="/js/alert.js"></script>
+=======
+>>>>>>> 3b955823674bdc98ae5c3ce622fe6db626c0247d
 @endsection

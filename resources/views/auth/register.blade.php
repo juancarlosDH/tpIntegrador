@@ -64,7 +64,11 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
+<<<<<<< HEAD
                                     {{ __('Register') }}
+=======
+                                    Registrate
+>>>>>>> 3b955823674bdc98ae5c3ce622fe6db626c0247d
                                 </button>
                             </div>
                         </div>

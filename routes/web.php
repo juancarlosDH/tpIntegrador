@@ -29,7 +29,10 @@ Route::prefix('/peliculas')->group( function(){
 
 Route::get('/', 'MiControlador@principal');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3b955823674bdc98ae5c3ce622fe6db626c0247d
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

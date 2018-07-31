@@ -2,17 +2,26 @@
 | Domain | Method   | URI                    | Name             | Action                                                                 | Middleware   |
 +--------+----------+------------------------+------------------+------------------------------------------------------------------------+--------------+
 |        | GET|HEAD | /                      |                  | App\Http\Controllers\MiControlador@principal                           | web          |
+<<<<<<< HEAD
 |        | GET|HEAD | api/pelis/listado      |                  | App\Http\Controllers\Api\ApiPeliculasController@listado                | api          |
 |        | GET|HEAD | api/user               |                  | Closure                                                                | api,auth:api |
 |        | GET|HEAD | generos                |                  | App\Http\Controllers\GenresController@listar                           | web,auth     |
 |        | GET|HEAD | home                   | home             | App\Http\Controllers\HomeController@index                              | web,auth     |
 |        | POST     | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
 |        | GET|HEAD | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+=======
+|        | GET|HEAD | api/user               |                  | Closure                                                                | api,auth:api |
+|        | GET|HEAD | generos                |                  | App\Http\Controllers\GenresController@listar                           | web          |
+|        | GET|HEAD | home                   | home             | App\Http\Controllers\HomeController@index                              | web,auth     |
+|        | GET|HEAD | login                  | login            | App\Http\Controllers\Auth\LoginController@showLoginForm                | web,guest    |
+|        | POST     | login                  |                  | App\Http\Controllers\Auth\LoginController@login                        | web,guest    |
+>>>>>>> 3b955823674bdc98ae5c3ce622fe6db626c0247d
 |        | POST     | logout                 | logout           | App\Http\Controllers\Auth\LoginController@logout                       | web          |
 |        | POST     | password/email         | password.email   | App\Http\Controllers\Auth\ForgotPasswordController@sendResetLinkEmail  | web,guest    |
 |        | GET|HEAD | password/reset         | password.request | App\Http\Controllers\Auth\ForgotPasswordController@showLinkRequestForm | web,guest    |
 |        | POST     | password/reset         |                  | App\Http\Controllers\Auth\ResetPasswordController@reset                | web,guest    |
 |        | GET|HEAD | password/reset/{token} | password.reset   | App\Http\Controllers\Auth\ResetPasswordController@showResetForm        | web,guest    |
+<<<<<<< HEAD
 |        | POST     | peliculas/agregar      |                  | App\Http\Controllers\PeliculasController@guardar                       | web,auth     |
 |        | GET|HEAD | peliculas/agregar      |                  | App\Http\Controllers\PeliculasController@agregar                       | web,auth     |
 |        | GET|HEAD | peliculas/listar       |                  | App\Http\Controllers\PeliculasController@listar                        | web,auth     |
@@ -20,4 +29,14 @@
 |        | POST     | peliculas/{id}         |                  | App\Http\Controllers\PeliculasController@actualizar                    | web,auth     |
 |        | GET|HEAD | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
 |        | POST     | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+=======
+|        | POST     | peliculas/agregar      |                  | App\Http\Controllers\PeliculasController@guardar                       | web          |
+|        | GET|HEAD | peliculas/agregar      |                  | App\Http\Controllers\PeliculasController@agregar                       | web          |
+|        | GET|HEAD | peliculas/listar       |                  | App\Http\Controllers\PeliculasController@listar                        | web          |
+|        | POST     | peliculas/{id}         |                  | App\Http\Controllers\PeliculasController@actualizar                    | web          |
+|        | GET|HEAD | peliculas/{id}         |                  | App\Http\Controllers\PeliculasController@editar                        | web          |
+|        | GET|HEAD | register               | register         | App\Http\Controllers\Auth\RegisterController@showRegistrationForm      | web,guest    |
+|        | POST     | register               |                  | App\Http\Controllers\Auth\RegisterController@register                  | web,guest    |
+|        | GET|HEAD | registro               |                  | App\Http\Controllers\MiControlador@registro                            | web          |
+>>>>>>> 3b955823674bdc98ae5c3ce622fe6db626c0247d
 +--------+----------+------------------------+------------------+------------------------------------------------------------------------+--------------+

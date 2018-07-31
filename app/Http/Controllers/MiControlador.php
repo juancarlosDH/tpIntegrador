@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 class MiControlador extends Controller
 {
   public function principal(){
+
+
+
     return view('principal');
   }
 

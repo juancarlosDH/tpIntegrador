@@ -13,12 +13,12 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><a href="/peliculas/listar">Peliculas</a></li>
-        <li><a href="#">Series</a></li>
+        <li><a href="{{ route('generos') }}">Generos</a></li>
 
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="/registro">Registro</a></li>
-        <li><a href="/login">Login</a></li>
+        <li><a href="{{ route('register') }}">Registro</a></li>
+        <li><a href="{{ route('login') }}">Login</a></li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container-fluid -->

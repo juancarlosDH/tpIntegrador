@@ -11,19 +11,25 @@
 |
 */
 
-Route::get('/generos', 'GenresController@listar');
+Route::get('/genres/list', 'GenresController@listar')->middleware('auth')->name('generos');
 
-Route::get('/peliculas/agregar', 'PeliculasController@agregar');
-Route::post('/peliculas/agregar', 'PeliculasController@guardar');
+Route::prefix('/peliculas')->group( function(){
 
-Route::get('/peliculas/listar', 'PeliculasController@listar');
+  Route::get('agregar', 'PeliculasController@agregar');
+  Route::post('agregar', 'PeliculasController@guardar');
 
-Route::get('/peliculas/{id}', 'PeliculasController@editar');
-Route::post('/peliculas/{id}', 'PeliculasController@actualizar');
+  Route::get('listar', 'PeliculasController@listar');
+
+  Route::get('{id}', 'PeliculasController@editar');
+  Route::post('{id}', 'PeliculasController@actualizar');
+
+});
 
 
-Route::get('/login', 'MiControlador@login');
-
-Route::get('/registro', 'MiControlador@registro');
 
 Route::get('/', 'MiControlador@principal');
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

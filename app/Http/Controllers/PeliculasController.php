@@ -10,17 +10,22 @@ use App\Genre;
 class PeliculasController extends Controller
 {
 
+  public function __construct(){
+      $this->middleware('auth');
+  }
+
   public function listar(){
 
     // $peliculas = Pelicula::all();
-    $peliculas = Pelicula::paginate(3);
+    //$peliculas = Pelicula::paginate(3);
 
     /*$peliculas->filter( function($peli){
       return $peli->rating >= 5 ;
     });*/
 
     return view('peliculas.listar')
-      ->with('listado', $peliculas);
+      //->with('listado', $peliculas)
+      ;
   }
 
 
@@ -65,7 +70,8 @@ class PeliculasController extends Controller
        'rating' => $request->input('rating'),
        'release_date' => $request->input('release_date'),
        'genre_id' => $request->input('genre_id'),
-       'ruta_imagen' => $ruta_imagen
+       'ruta_imagen' => $ruta_imagen,
+       'user_id' => Auth::user()->id
       ]
     );
 

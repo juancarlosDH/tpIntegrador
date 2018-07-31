@@ -24,23 +24,42 @@
    </div>
   @endif
 
-  <a href="/peliculas/agregar" class="btn btn-primary">Nueva Peli</a>
+  {{-- <a href="/peliculas/agregar" class="btn btn-primary">Nueva Peli</a> --}}
+
+  <form class="" action="index.html" method="post">
+
+    <select class="" name="idPais" id="idPais">
+
+    </select>
 
 
+  </form>
 
-  <div class="row">
 
-  @foreach ($listado as $peli)
-    <div class="col-sm-12">
-  		<img src="{{ \Storage::disk('public')->url($peli->ruta_imagen) }}" class="thumbnail miniatura" >
-        <a href="/peliculas/{{ $peli->id }}">{{ $peli->title }}
-          ({{ $peli->genre->name }})</a>
-      </div>
-  @endforeach
+  <a href="#" id="btn_recarga" class="btn btn-success">Cargar Pelis</a>
+
+  <div class="">
+    <img src="/images/imagen_cargando.gif" id="imagen_cargando" style="display:none" alt="" class="thumbnail">
+  </div>
+
+  <div class="row" id="carga_pelis">
+
+<?php /*
+    @foreach ($listado as $peli)
+      <div class="col-sm-12">
+    		<img src="{{ \Storage::disk('public')->url($peli->ruta_imagen) }}" class="thumbnail miniatura" >
+          <a href="/peliculas/{{ $peli->id }}">{{ $peli->title }}
+            ({{ $peli->genre->name }})</a>
+        </div>
+    @endforeach
+
+    */ ?>
 
   </div>
 
-
+<?php /*
 {{ $listado->links() }}
-
+*/ ?>
+<script src="/js/pelis.js"></script>
+<script src="/js/techo.js"></script>
 @endsection

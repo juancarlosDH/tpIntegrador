@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::get('/pelis/listado', 'Api\ApiPeliculasController@listado');
 
-
+Route::get('/verificarusuario/{email}', 'Api\ApiController@buscarpormail');
 
 
 
